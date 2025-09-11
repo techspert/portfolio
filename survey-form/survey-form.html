@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form - R. M. Adnan</title>
+    <link rel="stylesheet" href="survey-form.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1 id="title">Website Feedback Survey</h1>
+        <p id="description">We value your feedback! Please take a moment to share your thoughts.</p>
+    </header>
+    <main>
+        <form id="survey-form" action="https://formspree.io/f/meoldjkp" method="POST">
+            <!-- Name -->
+            <label id="name-label" for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <!-- Email -->
+            <label id="email-label" for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <!-- Age -->
+            <label id="number-label" for="number">Age (optional)</label>
+            <input type="number" id="number" name="age" placeholder="Enter your age" min="13" max="120">
+
+            <!-- Role -->
+            <label for="dropdown">Which option best describes you?</label>
+            <select id="dropdown" name="role" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="student">Student</option>
+                <option value="professional">Professional</option>
+                <option value="hobbyist">Hobbyist</option>
+                <option value="other">Other</option>
+            </select>
+
+            <!-- Recommendation -->
+            <fieldset>
+                <legend>Would you recommend our website?</legend>
+                <label class="inline"><input type="radio" name="recommend" value="definitely" class="inline" required> Definitely</label>
+                <label class="inline"><input type="radio" name="recommend" value="maybe" class="inline"> Maybe</label>
+                <label class="inline"><input type="radio" name="recommend" value="not-sure" class="inline"> Not sure</label>
+            </fieldset>
+
+            <!-- Favorite Feature -->
+            <label for="feature">What is your favorite feature?</label>
+            <select id="feature" name="feature">
+                <option value="" disabled selected>Select an option</option>
+                <option value="design">Design</option>
+                <option value="content">Content</option>
+                <option value="usability">Usability</option>
+                <option value="other">Other</option>
+            </select>
+
+            <!-- Improvements -->
+            <fieldset>
+                <legend>What would you like us to improve? (Check all that apply)</legend>
+                <label class="inline"><input type="checkbox" name="improve" value="design" class="inline"> Design</label>
+                <label class="inline"><input type="checkbox" name="improve" value="content" class="inline"> Content</label>
+                <label class="inline"><input type="checkbox" name="improve" value="performance" class="inline"> Performance</label>
+                <label class="inline"><input type="checkbox" name="improve" value="accessibility" class="inline"> Accessibility</label>
+            </fieldset>
+
+            <!-- Comments -->
+            <label for="comments">Additional Comments</label>
+            <textarea id="comments" name="comments" placeholder="Share your thoughts here..."></textarea>
+
+            <!-- Submit -->
+            <button type="submit" id="submit" class="cta-button">Submit Feedback</button>
+        </form>
+    </main>
+    <footer>
+        <p>Created by <a href="https://techspert.github.io/portfolio" target="_blank">R. M. Adnan</a> &copy; 2025</p>
+    </footer>
+    <script src="survey-form.js"></script>
+</body>
+  </html>

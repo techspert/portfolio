@@ -32,3 +32,54 @@ form.addEventListener('submit', (e) => {
         alert('Please fill out all fields.');
     }
 });
+
+// Slider Functionality
+const slides = document.querySelectorAll('.slide');
+const prevBtn = document.querySelector('.slider-prev');
+const nextBtn = document.querySelector('.slider-next');
+const dotsContainer = document.querySelector('.slider-dots');
+let currentSlide = 0;
+
+// Create Dots
+slides.forEach((_, index) => {
+    const dot = document.createElement('span');
+    dot.classList.add('dot');
+    dot.addEventListener('click', () => goToSlide(index));
+    dotsContainer.appendChild(dot);
+});
+
+// Update Dots
+function updateDots() {
+    document.querySelectorAll('.dot').forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentSlide);
+    });
+}
+
+// Go to Slide
+function goToSlide(slideIndex) {
+    currentSlide = slideIndex;
+    const offset = -currentSlide * 100;
+    document.querySelector('.slider').style.transform = `translateX(${offset}%)`;
+    updateDots();
+}
+
+// Next Slide
+nextBtn.addEventListener('click', () => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    goToSlide(currentSlide);
+});
+
+// Previous Slide
+prevBtn.addEventListener('click', () => {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    goToSlide(currentSlide);
+});
+
+// Auto Slide (Optional)
+setInterval(() => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    goToSlide(currentSlide);
+}, 5000); // Changes every 5 seconds
+
+// Initialize
+updateDots();

@@ -231,8 +231,8 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0, 183, 235, 0.8); /* Neon blue with transparency */
-    color: #1a1a1a;
+    background: #2c3e50; /* Dark navy from the first theme */
+    color: #fff;
     border: none;
     padding: 10px;
     cursor: pointer;
@@ -251,7 +251,7 @@ body {
 }
 
 .slider-prev:hover, .slider-next:hover {
-    background: #00d4ff; /* Brighter neon on hover */
+    background: #3498db; /* Blue accent from the first theme */
     transform: translateY(-50%) scale(1.1);
 }
 
@@ -263,7 +263,7 @@ body {
 .dot {
     height: 10px;
     width: 10px;
-    background: #666;
+    background: #ddd; /* Light gray to match the light theme */
     border-radius: 50%;
     display: inline-block;
     margin: 0 5px;
@@ -272,7 +272,7 @@ body {
 }
 
 .dot.active {
-    background: #00b7eb; /* Neon blue for active dot */
+    background: #3498db; /* Blue accent for active dot */
 }
 
 /* Responsive Adjustments */

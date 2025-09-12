@@ -157,6 +157,32 @@ body {
     height: auto;
 }
 
+.project-images {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.project-image {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+@media (min-width: 768px) {
+    .project-images {
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    .project-image {
+        width: 48%; /* Approx half width on desktop */
+        max-height: 150px; /* Adjusted for side-by-side */
+    }
+}
+
 .project-card h3 {
     font-size: 1.3rem;
     margin: 15px;
